@@ -11,9 +11,9 @@ function App(): JSX.Element {
         <>
             {/*<ButtonItem/>*/}
             {/*<TaskUseState/>*/}
-            {/*<TaskFilter/>*/}
+            <TaskFilter/>
             {/*<Map/>*/}
-            <FullContainer/>
+            {/*<FullContainer/>*/}
         </>
     )
 }

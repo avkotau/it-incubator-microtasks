@@ -1,35 +1,27 @@
 import React, { FC } from 'react';
+import { BlueButton, Button, TomatoButton } from "./Styles";
+import MoneyComponent from "./MoneyComponent";
 
 type FilterComponentType = {
     currentMoney: Array<{
         banknote: string;
         nominal: number;
         number: string
-}>
+    }>
     onClickFilterHandler: (moneyElem: string) => void
 }
 
 const FilterComponent: FC<FilterComponentType> = (props) => {
-    console.log(props)
+
     return (
-        <div>
-            <ul>
-                {props.currentMoney.map((objFromMoneyArr, i) => {
-                    return(
-                        <li key={i}>
-                            <span>{objFromMoneyArr.banknote}</span>
-                            <span>{objFromMoneyArr.nominal}</span>
-                            <span>{objFromMoneyArr.number}</span>
-                        </li>
-                    )
-                })}
-            </ul>
-            <div style={{marginLeft: '35px'}}>
-                <button onClick={()=>props.onClickFilterHandler('all')}>all</button>
-                <button onClick={()=>props.onClickFilterHandler('ruble')}>ruble</button>
-                <button onClick={()=>props.onClickFilterHandler('dollar')}>dollar</button>
+        <>
+            <div>
+                <Button onClick={() => props.onClickFilterHandler('all')}>all</Button>
+                <TomatoButton onClick={() => props.onClickFilterHandler('ruble')}>ruble</TomatoButton>
+                <BlueButton onClick={() => props.onClickFilterHandler('dollar')}>dollar</BlueButton>
             </div>
-        </div>
+            <MoneyComponent currentMoney={props.currentMoney}/>
+        </>
     );
 };
 

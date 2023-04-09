@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import FilterComponent from "./FilterComponent";
+import { Wrapper } from "./Styles";
 
 const TaskFilter = () => {
     const [money, setMoney] = useState([
@@ -26,13 +27,12 @@ const TaskFilter = () => {
 
     const onClickFilterHandler = (moneyElem: string) => {
         setMoneyElem(moneyElem);
-        console.log(moneyElem)
     }
 
     return (
-        <>
+        <Wrapper>
             <FilterComponent currentMoney={currentMoney} onClickFilterHandler={onClickFilterHandler}/>
-        </>
+        </Wrapper>
 
     );
 };
